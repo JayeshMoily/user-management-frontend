@@ -1,15 +1,11 @@
-
-import Login from "./components/Login/Login";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Register from "./components/Register/Register";
+import { AuthProvider } from "./auth/AuthContext";
+import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
-    <>
-      {/* <Login /> */}
-      <Register></Register>
-    </>
+    <AuthProvider>
+      <AppRouter />
+    </AuthProvider>
   );
 }
 
