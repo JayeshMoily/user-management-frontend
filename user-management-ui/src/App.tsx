@@ -1,11 +1,14 @@
-import LandingPage from "./component/LandingPage/LandingPage";
-import LoginPage from "./component/LoginPage/LoginPage";
+
+import Login from "./components/Login/Login";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Register from "./components/Register/Register";
 
 function App() {
   return (
     <>
-      <LoginPage />
+      {/* <Login /> */}
+      <Register></Register>
     </>
   );
 }
