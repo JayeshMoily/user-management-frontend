@@ -1,11 +1,11 @@
 import axiosInstance from './axiosInstance';
 import { API_URLS } from './apiUrls';
 
-export const login = (payload: { username: string; password: string }) => {
+export const login = (payload: { email: string; password: string }) => {
   return axiosInstance.post(API_URLS.login, payload);
 };
 
-export const register = (payload: { username: string; password: string }) => {
+export const register = (payload: { firstName: string; lastName: string; email: string; userRole: string; password: string; }) => {
   return axiosInstance.post(API_URLS.register, payload);
 };
 

@@ -1,4 +1,4 @@
-const BASE_URL = 'http://http://localhost:5000/api';
+const BASE_URL = 'http://localhost:5000';
 
 export const API_URLS = {
   login: `${BASE_URL}/api/login`,

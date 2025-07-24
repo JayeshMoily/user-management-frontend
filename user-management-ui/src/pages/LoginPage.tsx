@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../api/apiService";
 import { useAuth } from "../auth/AuthContext";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -21,7 +23,8 @@ const LoginPage: React.FC = () => {
 
   return (
     <div>
-      <h2>Login</h2>
+     <Login />
+      {/* <h2>Login</h2>
       <input
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -33,7 +36,7 @@ const LoginPage: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin}>Login</button> */}
     </div>
   );
 };
