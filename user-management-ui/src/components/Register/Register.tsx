@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { register } from "../../api/apiService";
-import { Link, Outlet } from 'react-router-dom';
-
-
+import { Link } from "react-router-dom";
 
 const Register: React.FC = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,20 +12,20 @@ const Register: React.FC = () => {
 
   const navigate = useNavigate();
 
-const handleRegister = async () => {
-  console.log({ firstName, lastName, email, userRole, password });
+  const handleRegister = async () => {
+    console.log({ firstName, lastName, email, userRole, password });
     try {
-
-      const res = await register({ firstName, lastName, email, userRole, password });
+      const res = await register({
+        firstName,
+        lastName,
+        email,
+        userRole,
+        password,
+      });
       console.log(res);
-      if(res){
-        // setFirstName('');
-        // setLastName('');
-        // setEmail('');
-        // setFirstName('');
-         navigate("/login");
+      if (res) {
+        navigate("/");
       }
-     
     } catch (err) {
       console.error("Login failed:", err);
     }
@@ -51,35 +49,31 @@ const handleRegister = async () => {
                   <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-2 text-black">
                       <form>
-                        <div className="d-flex align-items-center mb-2 pb-1">
-                        </div>
-                        <div  className="form-outline mb-2">
+                        <div className="d-flex align-items-center mb-2 pb-1"></div>
+                        <div className="form-outline mb-2">
                           <label className="form-label">First Name</label>
                           <input
-                           value={firstName}
-                           onChange={(e) => setFirstName(e.target.value)}
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                             type="text"
-                            
                             className="form-control form-control-lg"
                           />
                         </div>
-                        <div  className="form-outline mb-2">
+                        <div className="form-outline mb-2">
                           <label className="form-label">Last Name</label>
                           <input
-                           value={lastName}
-                           onChange={(e) => setLastName(e.target.value)}
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                             type="text"
-                            
                             className="form-control form-control-lg"
                           />
                         </div>
-                        <div  className="form-outline mb-2">
+                        <div className="form-outline mb-2">
                           <label className="form-label">Email address</label>
                           <input
-                           value={email}
-                           onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             type="email"
-                            
                             className="form-control form-control-lg"
                           />
                         </div>
@@ -87,10 +81,9 @@ const handleRegister = async () => {
                         <div className="form-outline mb-2">
                           <label className="form-label">Password</label>
                           <input
-                           value={password}
-                           onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             type="password"
-                           
                             className="form-control form-control-lg"
                           />
                         </div>
@@ -104,15 +97,20 @@ const handleRegister = async () => {
                           />
                         </div> */}
                         <div className="pt-1 mb-2 ">
-                          <button onClick={handleRegister} className="btn btn-primary btn-lg btn-block text-right"
-                            type="button">
+                          <button
+                            onClick={handleRegister}
+                            className="btn btn-primary btn-lg btn-block text-right"
+                            type="button"
+                          >
                             Register
                           </button>
                         </div>
 
                         <p className="mb-2 pb-lg-2">
-                           have an account?
-                            <Link className="nav-link text-primary" to="/">Login here</Link>
+                          have an account?
+                          <Link className="nav-link text-primary" to="/">
+                            Login here
+                          </Link>
                         </p>
                       </form>
                     </div>
