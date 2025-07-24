@@ -69,7 +69,7 @@ const Login: React.FC = () => {
                         <div className="pt-1 mb-4">
                           <button data-mdb-button-init  className="btn btn-primary btn-lg btn-block" type="button" onClick={handleLogin}>Login</button>
                         </div>
-                        <p className="mb-5 pb-lg-2" >Don't have an account?
+                        <p className="mb-3 pb-lg-2" >Don't have an account?
                           <Link className="nav-link text-primary" to="/register">Register here</Link>
                         </p>
                       </form>
