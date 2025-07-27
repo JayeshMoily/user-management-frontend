@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
         </div>
         <ul className="sidebar-nav list-unstyled">
           <li className="nav-item">
-            <Link className="nav-link " to="/chatPage">
+            <Link className="nav-link " to="/dashboard/chat">
               <i className="fa-solid fa-comment me-3"></i>Group Chat
             </Link>
           </li>
@@ -35,7 +35,7 @@ const Sidebar: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link className="nav-link " to="/chatPage">
+            <Link className="nav-link " to="/doc">
               <i className="fa-solid fa-file me-3"></i>Document
             </Link>
           </li>

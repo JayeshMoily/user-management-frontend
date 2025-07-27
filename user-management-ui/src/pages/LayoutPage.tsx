@@ -1,6 +1,7 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Sidebar from "../components/layout/Sidebar";
-import UsersPage from "./UsersPage";
+
 const LayoutPage: React.FC = () => {
   return (
     <>
@@ -10,7 +11,7 @@ const LayoutPage: React.FC = () => {
             <Sidebar />
           </div>
           <div className="col-9">
-            <UsersPage></UsersPage>
+            <Outlet />
           </div>
         </div>
       </div>

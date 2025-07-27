@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
-import ChatPage from "../components/ChatPage/ChatPage";
+import GroupChatPage from "../pages/GroupChatPage";
 import ProtectedRoute from "../auth/ProtectedRoute";
 import RegisterPage from "../pages/RegisterPage";
 import LayoutPage from "../pages/LayoutPage";
@@ -19,8 +19,9 @@ const AppRouter = () => (
           </ProtectedRoute>
         }
       >
-        {" "}
-        <Route path="/dashboard/userlist" element={<UsersPage />} />
+        <Route index element={<GroupChatPage />} />
+        <Route path="chat" element={<GroupChatPage />} />
+        <Route path="userlist" element={<UsersPage />} />
       </Route>
       <Route path="/register" element={<RegisterPage />} />
       <Route
@@ -28,14 +29,6 @@ const AppRouter = () => (
         element={
           <ProtectedRoute>
             <UsersPage />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        path="/chat"
-        element={
-          <ProtectedRoute>
-            <ChatPage />
           </ProtectedRoute>
         }
       />
